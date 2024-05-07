@@ -238,8 +238,163 @@
 
             <Title text="Grid" width="100%" class="title" titleStyle="H2" textAlign="Center"/>
 
+              <l:Grid hSpacing="1" vSpacing="1" width="100%">
+                <!--GRID 12-->
+                <VBox class="gridDoce" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL12 L6 M6 S6"/>
+                    </layoutData>
+                </VBox>
+                 <VBox class="gridSeis" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL12 L6 M6 S6"/>
+                    </layoutData>
+                </VBox>
+                <!--GRID 6-->
+                <VBox class="gridSeis" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL6 L6 M6 S6"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridSeis" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL6 L6 M6 S6"/>
+                    </layoutData>
+                </VBox>
+                <!--GRID 4-->
+                <VBox class="gridCuatro" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL4 L4 M4 S4"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridCuatro" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL4 L4 M4 S4"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridCuatro" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL4 L4 M4 S4"/>
+                    </layoutData>
+                </VBox>
+                <!--GRID 3-->
+                <VBox class="gridTres" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL3 L3 M3 S3"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridTres" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL3 L3 M3 S3"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridTres" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL3 L3 M3 S3"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridTres" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL3 L3 M3 S3"/>
+                    </layoutData>
+                </VBox>
+                <!--GRID 2-->
+                <VBox class="griDos" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL2 L2 M2 S2"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="griDos" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL2 L2 M2 S2"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="griDos" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL2 L2 M2 S2"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="griDos" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL2 L2 M2 S2"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="griDos" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL2 L2 M2 S2"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="griDos" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL2 L2 M2 S2"/>
+                    </layoutData>
+                </VBox>
+                <!--GRID 1-->
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <VBox class="gridUno" height="50px">
+                    <layoutData>
+                        <l:GridData span="XL1 L1 M1 S1"/>
+                    </layoutData>
+                </VBox>
+                <!--GRID MIX-->
+            </l:Grid>
 
-            <!--<Button text="Boton 1" class="sapUiMediumMargin"/>
+
+            <Button text="Boton 1" class="sapUiMediumMargin"/>
             <Button text="Boton 2"/>
             <Button text="Boton 3"/>
 
@@ -253,7 +408,7 @@
                 <Button text="Boton 1"/>
                 <Button text="Boton 2"/>
                 <Button text="Boton 3"/>
-            </HBox>-->
+            </HBox>
 
             <VBox id="vbox1" height="400px">
 
