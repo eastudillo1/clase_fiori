@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog contentWidth="700px" contentHeight="100%" title="Información Usuario" titleAlignment="Center">
+        <l:Grid hSpacing="1" vSpacing="1" width="100%" class="sapUiMediumMargin">
+            <VBox>
+                <Label text="Nombre Completo" showColon="true"/>
+                <Input editable="false" value="{oModelUsuarios>NOMBRE} {oModelUsuarios>APELLIDO}"/>
+
+                <Label text="Correo" showColon="true"/>
+                <Input editable="false" value="{oModelUsuarios>CORREO}"/>
+
+                <Label text="Estado" showColon="true"/>
+                <ObjectStatus inverted="true" text="{path: 'oModelUsuarios>ESTADO', formatter: '.formatterEstado'}" state="{path: 'oModelUsuarios>ESTADO', formatter: '.formatterColor'}" />
+
+                <Label text="Rol Editar" showColon="true"/>
+                <Switch enabled="false" state="{path: 'oModelUsuarios>EDIT', formatter: '.formatterEdit'}"/>
+
+                <Label text="Rol Visualizar" showColon="true"/>
+                <Input editable="false" value="{path: 'oModelUsuarios>VISIBLE', formatter: '.formatterTextVisible'}"/>
+
+                <layoutData>
+                    <l:GridData span="XL12 L12 M12 S12"/>
+                </layoutData>
+            </VBox>
+        </l:Grid>
+        <endButton>
+            <Button text="Cancelar" press="onCloseInformacion"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

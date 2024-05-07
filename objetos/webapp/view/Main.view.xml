@@ -1,0 +1,265 @@
+<mvc:View controllerName="com.becloud.objetos.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified">
+    <Page id="page" title="{i18n>title}" showHeader="false">
+        <content>
+            <Title text="Objetos" width="100%" class="title" titleStyle="H2" textAlign="Center"/>
+
+            <l:Grid hSpacing="1" vSpacing="1" width="100%" class="sapUiMediumMargin">
+                <VBox>
+                    <Title text="Label (sap.m.Label)" width="100%" class="title"/>
+                    <Label text="Label (default)"/>
+                    <Label text="Label (required:'true')" required="true"/>
+                    <Label text="Label (design:'Bold')" design="Bold"/>
+                    <Label text="Label (showColon:'true')" showColon="true"/>
+                    <Title text="Select (sap.m.Select)" width="100%" class="title"/>
+                    <Select width="100%">
+                        <core:Item key="1" text="Item 1" />
+                        <core:Item key="2" text="Item 2" />
+                        <core:Item key="3" text="Item 3" />
+                    </Select>
+                    <Select width="100%" forceSelection="false">
+                        <core:Item key="1" text="Item 1" />
+                        <core:Item key="2" text="Item 2" />
+                        <core:Item key="3" text="Item 3" />
+                    </Select>
+                    <Select width="100%" forceSelection="false" valueState="Success">
+                        <core:Item key="1" text="Item 1" />
+                        <core:Item key="2" text="Item 2" />
+                        <core:Item key="3" text="Item 3" />
+                    </Select>
+                    <Title text="ComboBox (sap.m.ComboBox)" width="100%" class="title"/>
+                    <ComboBox width="100%">
+                        <core:Item key="1" text="Item 1" />
+                        <core:Item key="2" text="Item 2" />
+                        <core:Item key="3" text="Item 3" />
+                    </ComboBox>
+                    <ComboBox width="100%" valueState="Warning">
+                        <core:Item key="1" text="Item 1" />
+                        <core:Item key="2" text="Item 2" />
+                        <core:Item key="3" text="Item 3" />
+                    </ComboBox>
+                    <ComboBox width="100%" valueState="Error">
+                        <core:Item key="1" text="Item 1" />
+                        <core:Item key="2" text="Item 2" />
+                        <core:Item key="3" text="Item 3" />
+                    </ComboBox>
+
+                    <Title text="Button (sap.m.Button)" width="100%" class="title"/>
+                    <Button icon="sap-icon://account" type="Accept" width="100%"/>
+                    <Button icon="sap-icon://action-settings" text="Configuración" type="Emphasized" width="100%"/>
+                    <Button text="Ingreso" width="100%"/>
+
+                    <Title text="MenuButton (sap.m.MenuButton)" width="100%" class="title"/>
+                    <MenuButton text="Opciones" width="100%">
+                        <menu>
+                            <Menu >
+                                <MenuItem text="Editar" icon="sap-icon://edit" press="onPress"/>
+                                <MenuItem text="Guardar" icon="sap-icon://save" press="onPress" />
+                                <MenuItem text="Abrir" icon="sap-icon://open-folder" press="onPress" />
+                            </Menu>
+                        </menu>
+                        <layoutData>
+                            <FlexItemData maxWidth="100%"/>
+                        </layoutData>
+                    </MenuButton>
+
+                    <Title text="Switch (sap.m.Switch)" width="100%" class="title"/>
+                    <HBox >
+                        <Switch state="true">
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+                        <Switch state="false">
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+                        <Switch state="true" enabled="false">
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+
+                        <Switch state="true" type="AcceptReject" customTextOn=" " customTextOff=" ">
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+                        <Switch state="false" type="AcceptReject" customTextOn=" " customTextOff=" ">
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+                        <Switch state="true" type="AcceptReject" customTextOn=" " customTextOff=" " enabled="false">
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </Switch>
+                    </HBox>
+
+                    <Title text="ProgressIndicator (sap.m.ProgressIndicator)" width="100%" class="title"/>
+                    <ProgressIndicator state="Error" displayValue="25" percentValue="25" />
+                    <ProgressIndicator state="Warning" displayValue="50" percentValue="50"/>
+                    <layoutData>
+                        <l:GridData span="XL3 L3 M6 S12"/>
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Title text="Title (sap.m.Title)" width="100%" class="title"/>
+                    <Title text="Title (default)"/>
+                    <Title text="Title titleStyle 1" titleStyle="H1" />
+                    <Title text="Title titleStyle 2" titleStyle="H2" />
+                    <Title text="Title titleStyle 3" titleStyle="H3" />
+                    <Title id="title4" text="Title titleStyle 4" titleStyle="H4" />
+
+                    <Title text="ColorPicker (sap.ui.unified.ColorPicker)" width="100%" class="title"/>
+                    <u:ColorPicker mode="HSL"/>
+                    <layoutData>
+                        <l:GridData span="XL3 L3 M6 S12"/>
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Title text="Input (sap.m.Input)" width="100%" class="title"/>
+                    <Input width="100%" placeholder="liveChange" change="eventoLiveChange"/>
+                    <Input width="100%" placeholder="Placeholder"/>
+                    <Input width="100%" placeholder="Password" type="Password"/>
+                    <Input width="100%" placeholder="enabled" enabled="false"/>
+                    <Input width="100%" valueHelpIconSrc="sap-icon://arrow-left" showValueHelp="true"/>
+                    <Input width="100%" placeholder="State Success" valueState="Success"/>
+                    <Input width="100%" placeholder="State Warning" valueState="Warning"/>
+                    <Input width="100%" placeholder="State Error" valueState="Error"/>
+
+                    <Title text="FileUploader (sap.ui.unified.FileUploader)" width="100%" class="title"/>
+                    <u:FileUploader width="100%"/>
+
+                    <Title text="MultiComboBox (sap.m.MultiComboBox)" width="100%" class="title"/>
+                    <MultiComboBox width="100%">
+                        <core:Item key="1" text="Item 1" />
+                        <core:Item key="2" text="Item 2" />
+                        <core:Item key="3" text="Item 3" />
+                    </MultiComboBox>
+
+                    <Title text="RadioButton (sap.m.RadioButton)" width="100%" class="title"/>
+                    <RadioButton text="Option 1" selected="true" />
+                    <RadioButton text="Option 2" />
+                    <RadioButton text="Option 3" />
+
+                    <Title text="RadioButtonGroup (sap.m.RadioButtonGroup)" width="100%" class="title" wrapping="true"/>
+                    <RadioButtonGroup columns="3" valueState="Success">
+                        <RadioButton text="Option 1" selected="true" />
+                        <RadioButton text="Option 2" />
+                        <RadioButton text="Option 3" />
+                    </RadioButtonGroup>
+
+                    <Title text="CheckBox (sap.m.CheckBox)" width="100%" class="title" wrapping="true"/>
+                    <HBox >
+                        <CheckBox text="Option A" selected="true" />
+                        <CheckBox text="Option B" />
+                        <CheckBox text="Option C" />
+                    </HBox>
+                    <layoutData>
+                        <l:GridData span="XL3 L3 M6 S12"/>
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Title text="DatePicker (sap.m.DatePicker)" width="100%" class="title"/>
+                    <DatePicker width="100%" placeholder=" "/>
+                    <Title text="DateRangeSelection (sap.m.DateRangeSelection)" wrapping="true" width="100%" class="title"/>
+                    <DateRangeSelection width="100%" placeholder=" "/>
+                    <Title text="Calendar (sap.ui.unified.Calendar)" wrapping="true" width="100%" class="title"/>
+                    <u:Calendar width="100%"/>
+
+                    <Title text="TextArea (sap.m.TextArea)" width="100%" class="title" wrapping="true"/>
+                    <TextArea width="100%" rows="5"/>
+
+                    <Title text="RangeSlider (sap.m.RangeSlider)" width="100%" class="title" wrapping="true"/>
+                    <RangeSlider showAdvancedTooltip="true" min="0" max="100" width="100%" />
+
+                    <layoutData>
+                        <l:GridData span="XL3 L3 M6 S12"/>
+                    </layoutData>
+                </VBox>
+            </l:Grid>
+
+            <Title text="Contenedores" width="100%" class="title" titleStyle="H2" textAlign="Center"/>
+
+
+
+            <l:Grid hSpacing="1" vSpacing="1" width="100%">
+                <Table id="idProductsTable" inset="false" items="{oModelUsuarios>/}">
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <content>
+                                <Title text="Registros (0)" level="H2"/>
+                                <ToolbarSpacer />
+                                <CheckBox text="ColumnHeaders" select="onSelect"/>
+                                <Button text="Crear registro" press="onToggleInfoToolbar" type="Emphasized"/>
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column width="12em">
+                            <Text text="ID" />
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Nombre" />
+                        </Column>
+                        <Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+                            <Text text="Correo" />
+                        </Column>
+                        <Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+                            <Text text="Estado" />
+                        </Column>
+                        <Column >
+                            <Text text="" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells>
+                                <ObjectIdentifier title="{oModelUsuarios>ID}" text=""/>
+                                <Input change="usuarioEditado" placeholder="Ingreses su nombre" value="{oModelUsuarios>NOMBRE} {oModelUsuarios>APELLIDO}" editable="{path: 'oModelUsuarios>EDIT', formatter: '.formatterEdit'}"/>
+                                <ObjectIdentifier title="{oModelUsuarios>CORREO}" text=""/>
+                                <ObjectStatus inverted="true" text="{path: 'oModelUsuarios>ESTADO', formatter: '.formatterEstado'}" state="{path: 'oModelUsuarios>ESTADO', formatter: '.formatterColor'}" />
+                                <Button text="Administrar" press="onPressInformacion" visible="{path: 'oModelUsuarios>VISIBLE', formatter: '.formatterVisible'}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                    <layoutData>
+                        <l:GridData span="XL12 L12 M12 S12"/>
+                    </layoutData>
+                </Table>
+            </l:Grid>
+
+            <Title text="Grid" width="100%" class="title" titleStyle="H2" textAlign="Center"/>
+
+
+            <!--<Button text="Boton 1" class="sapUiMediumMargin"/>
+            <Button text="Boton 2"/>
+            <Button text="Boton 3"/>
+
+            <VBox class="sapUiSmallMarginTop">
+                <Button text="Boton 1"/>
+                <Button text="Boton 2"/>
+                <Button text="Boton 3" class="sapUiSmallMarginTop"/>
+            </VBox>
+
+            <HBox width="100%" alignItems="Center" justifyContent="SpaceAround">
+                <Button text="Boton 1"/>
+                <Button text="Boton 2"/>
+                <Button text="Boton 3"/>
+            </HBox>-->
+
+            <VBox id="vbox1" height="400px">
+
+            </VBox>
+
+
+        </content>
+    </Page>
+</mvc:View>
