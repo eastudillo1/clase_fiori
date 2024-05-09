@@ -1,0 +1,77 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:rt="sap.ui.richtexteditor">
+    <Dialog id="dlgInfoProducto" title="Producto seleccionado: " type='Message' contentWidth="600px" class="sapUiNoContentPadding">
+        <content>
+            <l:Grid vSpacing="1" hSpacing="1" width="100%" class="sapUiSmallMargin">
+                <VBox>
+                    <Title text="Información Producto"/>
+                    <layoutData>
+                        <l:GridData span="XL12 L12 M12 S12"/>
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="Nombre Producto" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>ProductName}"/>
+                    <Label text="Cantidad x Unidad" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>QuantityPerUnit}"/>
+                    <Label text="Precio" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>UnitPrice}"/>
+                    <Label text="Stock" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>UnitsInStock}"/>
+                    <Label text="Pedidos" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>UnitsOnOrder}"/>
+                    <Label text="Estado" />
+                    <Input enabled="false" width="100%" value="{path: 'oModelProducts>Discontinued', formatter: '.formatterEstado'}"/>
+                    <layoutData>
+                        <l:GridData span="XL12 L12 M12 S12"/>
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Title text="Información Proveedor"/>
+                    <layoutData>
+                        <l:GridData span="XL12 L12 M12 S12"/>
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="Nombre Proveedor" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>Supplier/CompanyName}"/>
+                    <Label text="Telefono" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>Supplier/Phone}"/>
+                    <Label text="Región" />
+                    <Input enabled="false" width="100%" value="{path: 'oModelProducts>Supplier/Region', formatter: '.formatterNA'}"/>
+                    <Label text="Ciudad" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>Supplier/City}"/>
+                    <Label text="Dirección" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>Supplier/Address}"/>
+                    <layoutData>
+                        <l:GridData span="XL12 L12 M12 S12"/>
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Title text="Información Categoria"/>
+                    <layoutData>
+                        <l:GridData span="XL12 L12 M12 S12"/>
+                    </layoutData>
+                </VBox>
+                <VBox>
+                    <Label text="Nombre Categoria" />
+                    <Input enabled="false" width="100%" value="{oModelProducts>Category/CategoryName}"/>
+                    <Label text="Descripción" />
+                    <TextArea enabled="false" rows="4" value="{oModelProducts>Category/Description}" width="100%"/>
+                    <Label text="Imagen" />
+                    <HBox justifyContent="Center" alignContent="Center" alignItems="Center">
+                        <Image src="{path: 'oModelProducts>Category/Picture', formatter: '.formatPhoto'}" height="250px" width="250px" />
+                    </HBox>
+                    <layoutData>
+                        <l:GridData span="XL12 L12 M12 S12"/>
+                    </layoutData>
+                </VBox>
+            </l:Grid>
+        </content>
+        <beginButton>
+            <Button text="Cerrar" press="onCloseInfoProduct"/>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

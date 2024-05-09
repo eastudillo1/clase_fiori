@@ -1,0 +1,106 @@
+<mvc:View controllerName="com.becloud.app.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <fb:FilterBar class="sapUiSizeCompact" reset="onResetFilters" showRestoreOnFB="true" showGoOnFB="false" showFilterConfiguration="false" useToolbar="false">
+                <fb:filterItems>
+                    <fb:FilterItem name="A" label="Nombre Producto">
+                        <fb:control>
+                            <Input id="ipNombreProductoSearch" width="100%" liveChange="changeFilter"/>
+                        </fb:control>
+                    </fb:FilterItem>
+                    <fb:FilterItem name="B" label="Estado">
+                        <fb:control>
+                            <Select id="slEstadoSearch" selectedKey="0" change="changeFilter">
+                                <core:Item key="0" text="Todos"/>
+                                <core:Item key="1" text="Activo"/>
+                                <core:Item key="2" text="Descontinuado"/>
+                            </Select>
+                        </fb:control>
+                    </fb:FilterItem>
+                    <fb:FilterItem name="C" label="Proveedor">
+                        <fb:control>
+                            <Select id="slProveedorSearch" change="changeFilter" forceSelection="false" items="{oModelProveedor>/}">
+                                <core:Item key="{oModelProveedor>SupplierID}" text="{oModelProveedor>CompanyName}"/>
+                            </Select>
+                        </fb:control>
+                    </fb:FilterItem>
+                    <fb:FilterItem name="D" label="Categoria">
+                        <fb:control>
+                            <Select id="slCategoriaSearch" change="changeFilter" forceSelection="false" items="{oModelCategorias>/}">
+                                <core:Item key="{oModelCategorias>CategoryID}" text="{oModelCategorias>CategoryName}"/>
+                            </Select>
+                        </fb:control>
+                    </fb:FilterItem>
+                </fb:filterItems>
+            </fb:FilterBar>
+
+            <VBox class="sapUiSmallMargin">
+                <Table id="idProductsTable" sticky="ColumnHeaders,HeaderToolbar" items="{path: 'oModelProducts>/', sorter: [{path: 'ProductName', descending: false}]}" mode="None" updateFinished="updateFinished" growing="true" growingThreshold="10">
+                    <headerToolbar>
+                        <Toolbar>
+                            <content>
+                                <Title id="tProducts" text="Registros (0)"/>
+                                <Button icon="sap-icon://excel-attachment" press="onExcel" tooltip="Descargar registros"/>
+                                <ToolbarSpacer/>
+                                <Button class="sapUiSizeCompact" tooltip="Ingreso producto" iconFirst="false" text="Ingreso producto" icon="sap-icon://create-form" type="Emphasized" press="onCreate"/>
+                                <Button class="sapUiSizeCompact" tooltip="Actualizar datos" iconFirst="false" text="Actualizar datos" icon="sap-icon://synchronize" type="Emphasized" press="onRefresh"/>
+                            </content>
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Proveedor"/>
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Nombre"/>
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Cantidad x Unidad"/>
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Precio"/>
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Stock"/>
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Categoria"/>
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true">
+                            <Text text="Estado"/>
+                        </Column>
+                        <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" vAlign="Middle">
+                            <Text text="Acciones"/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Detail" detailPress="onEdit" vAlign="Middle">
+                            <cells>
+                                <VBox >
+                                    <ObjectIdentifier text="{oModelProducts>Supplier/CompanyName}"/>
+                                    <ObjectIdentifier text=" {oModelProducts>Supplier/City}"/>
+                                    <ObjectIdentifier text="{oModelProducts>Supplier/Address}"/>
+                                </VBox>
+                                <ObjectIdentifier text="{oModelProducts>ProductName}"/>
+                                <ObjectIdentifier text="{oModelProducts>QuantityPerUnit}" />
+                                <ObjectIdentifier text="${oModelProducts>UnitPrice}"/>
+                                <ObjectIdentifier text="{oModelProducts>UnitsInStock}"/>
+                                <ObjectIdentifier text="{oModelProducts>Category/CategoryName}"/>
+                                <ObjectStatus text="{path: 'oModelProducts>Discontinued', formatter: '.formatterEstado'}" state="{path: 'oModelProducts>Discontinued', formatter: '.formatterState'}" inverted="true"/>
+                                <HBox justifyContent="SpaceAround">
+                                    <Button icon="sap-icon://information" press="onShowInformation" tooltip="Ver producto" type="Transparent"/>
+                                    <Button icon="sap-icon://message-success" press="onActive" tooltip="Activar" type="Transparent" visible="{path: 'oModelProducts>Discontinued', formatter: '.formatterActive'}"/>
+                                    <Button icon="sap-icon://message-error" press="onDesc" tooltip="Descontinuar" type="Transparent" visible="{path: 'oModelProducts>Discontinued', formatter: '.formatterDesc'}"/>
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
