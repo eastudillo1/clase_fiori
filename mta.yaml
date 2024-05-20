@@ -8,6 +8,12 @@ modules:
   requires:
   - name: cf_northwind_html_repo_runtime
   - name: uaa_cf_northwind
+  - name: cf_northwind-destination-service
+    group: destinations
+    properties:
+      forwardAuthToken: false
+      name: ui5
+      url: https://ui5.sap.com
   parameters:
     disk-quota: 256M
     memory: 256M
@@ -16,13 +22,6 @@ modules:
   path: .
   requires:
   - name: cf_northwind_html_repo_host
-    parameters:
-      content-target: true
-- name: cf_northwind-app-content
-  type: com.sap.application.content
-  path: .
-  requires:
-  - name: cf_northwind-repo-host
     parameters:
       content-target: true
   build-parameters:
@@ -59,12 +58,6 @@ resources:
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
-    service-plan: app-host
-- name: cf_northwind-repo-host
-  type: org.cloudfoundry.managed-service
-  parameters:
-    service: html5-apps-repo
-    service-name: cf_northwind-html5-srv
     service-plan: app-host
 - name: cf_northwind-destination-service
   type: org.cloudfoundry.managed-service

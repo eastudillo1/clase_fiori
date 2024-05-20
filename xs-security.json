@@ -16,5 +16,11 @@
         "uaa.user"
       ]
     }
-  ]
+  ],
+  "oauth2-configuration": {
+    "token-validity": 900,
+    "redirect-uris": [
+      "https://*.cfapps.us10-001.hana.ondemand.com/**"
+    ]
+  }
 }

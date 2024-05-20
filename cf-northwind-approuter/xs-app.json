@@ -1,4 +1,13 @@
 {
-  "authenticationMethod": "none",
-  "routes": []
+  "welcomeFile": "/combecloudapp",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/V2/(.*)$",
+      "target": "/V2/$1",
+      "destination": "Northwind",
+      "authenticationType": "none",
+      "csrfProtection": false
+    }
+  ]
 }
